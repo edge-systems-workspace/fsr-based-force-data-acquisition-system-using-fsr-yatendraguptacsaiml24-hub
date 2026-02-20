@@ -1,44 +1,54 @@
+// main.cpp
 #include <Arduino.h>
+
 /**
- * @file main.ino
+ * @file main.cpp
  * @brief Embedded Force Measurement System using FSR
- * @author YOUR_NAME
- * @date YYYY-MM-DD
+ * @author yatendraguptacsaiml24-hub (Yatendra Kumar Gupta)
+ * @date 20-02-2026
  *
  * @details
- * Reads analog force data from FSR sensor and
- * displays structured output via Serial Monitor.
+ * Reads analog force data from an FSR (Force Sensitive Resistor) sensor
+ * connected to `FSR_PIN` and prints structured output to the Serial Monitor.
+ * Simple thresholding is used to indicate presence of pressure.
  */
 
- // TODO 1:
- // Define FSR analog pin (Use A0)
+#define FSR_PIN A0
 
- // TODO 2:
- // Create variable to store sensor reading
+int fsrValue = 0;
 
+/**
+ * @brief Initialize Serial communication and any required peripherals.
+ *
+ * This function configures the Serial port at 9600 baud and prints
+ * an initialization banner to the Serial Monitor.
+ *
+ * @return void
+ */
 void setup() {
-
-    // TODO 3:
-    // Initialize Serial communication (9600 baud rate)
-
-    // TODO 4:
-    // Print system initialization message
+    Serial.begin(9600);
+    Serial.println("=== FSR Force Measurement System Initialized ===");
 }
 
+/**
+ * @brief Main loop: read FSR value and print status to Serial.
+ *
+ * Reads the analog value from the FSR sensor on `FSR_PIN`, prints the raw ADC
+ * value and a simple thresholded status message. Loop delays 500 ms between reads.
+ *
+ * @return void
+ */
 void loop() {
 
-    // TODO 5:
-    // Read analog value from FSR
+    fsrValue = analogRead(FSR_PIN);
 
-    // TODO 6:
-    // Print raw ADC value
+    Serial.print("Raw ADC Value: ");
+    Serial.println(fsrValue);
 
-    // TODO 7:
-    // Apply simple threshold logic (e.g., detect pressure)
-
-    // TODO 8:
-    // Print pressure detection message
-
-    // TODO 9:
-    // Add delay (500ms or 1 second)
+    if (fsrValue > 100) {
+        Serial.println("Pressure Detected!");
+    } else {
+        Serial.println("No Significant Pressure.");
+    }
+    delay(500);
 }

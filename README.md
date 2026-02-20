@@ -1,4 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/VO8hr3MM)
 # 🧲 Embedded Force Measurement System – FSR
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
@@ -18,8 +17,6 @@ An embedded force sensing and data acquisition system using a Force Sensitive Re
 - Wiring Connections
 - Sensor Working Principle
 - Code Structure
-- Documentation Requirement
-- Submission Requirements
 - Future Improvements
 - License
 
@@ -96,32 +93,6 @@ The system:
 3. Converts raw ADC reading
 4. Prints formatted force data
 5. Applies threshold detection
-
----
-
-## 📚 Documentation Requirement
-
-Students must include:
-
-- File-level Doxygen block
-- Documentation for:
-  - `setup()`
-  - `loop()`
-- Required tags:
-  - `@file`
-  - `@brief`
-  - `@author`
-  - `@date`
-
----
-
-## 📊 Submission Requirements
-
-- Minimum 5 meaningful commits
-- Proper commit message format
-- TODO tasks completed
-- Doxygen documentation included
-- Code must compile successfully
 
 ---
 
